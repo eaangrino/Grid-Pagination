@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const calculateRange = (data: any[], itemsPerPage: number) => {
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages: number = Math.ceil(data.length / itemsPerPage);
   return totalPages;
 };
 
@@ -15,12 +15,12 @@ const useGrid = (data: any[], currentPage: number, itemsPerPage: number) => {
   const [slice, setSlice] = useState<any>([]);
 
   const startIndex: number = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  const endIndex: number = startIndex + itemsPerPage;
   useEffect(() => {
-    const range = calculateRange(data, itemsPerPage);
+    const range: number = calculateRange(data, itemsPerPage);
     setGridRange(range);
 
-    const slice = sliceData(data, startIndex, endIndex);
+    const slice: any[] = sliceData(data, startIndex, endIndex);
     setSlice(slice);
   }, [
     data,

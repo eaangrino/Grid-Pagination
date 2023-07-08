@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GridFooter from './GridFooter';
 import useGrid from './hook/useGrid';
 
-const GridPagination = ({ data, itemsPerPage }) => {
+const Grid = ({ data, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { slice, range } = useGrid(data, currentPage, itemsPerPage);
 
@@ -26,4 +26,4 @@ const GridPagination = ({ data, itemsPerPage }) => {
   );
 };
 
-export default GridPagination;
+export default Grid;
