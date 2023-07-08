@@ -3,3 +3,8 @@ export interface IData {
   age: number;
   genre: string;
 }
+
+export interface IDataUseGrid {
+  slice: IData[];
+  range: number;
+}
