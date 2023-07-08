@@ -7,7 +7,7 @@ const calculateRange = (data: IData[], itemsPerPage: number) => {
 };
 
 const sliceData = (data: IData[], startIndex: number, endIndex: number) => {
-  const items = data.slice(startIndex, endIndex);
+  const items: IData[] = data.slice(startIndex, endIndex);
   return items;
 };
 
