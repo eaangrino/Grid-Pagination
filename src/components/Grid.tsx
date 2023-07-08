@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { IData } from '../interfaces/interfaces';
 import GridFooter from './GridFooter';
 import useGrid from './hook/useGrid';
 
-const Grid = ({ data, itemsPerPage }) => {
+const Grid = ({
+  data,
+  itemsPerPage,
+}: {
+  data: IData[];
+  itemsPerPage: number;
+}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { slice, range } = useGrid(data, currentPage, itemsPerPage);
 

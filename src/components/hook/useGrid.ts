@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
+import { IData } from '../../interfaces/interfaces';
 
-const calculateRange = (data: any[], itemsPerPage: number) => {
+const calculateRange = (data: IData[], itemsPerPage: number) => {
   const totalPages: number = Math.ceil(data.length / itemsPerPage);
   return totalPages;
 };
 
-const sliceData = (data: any[], startIndex: number, endIndex: number) => {
+const sliceData = (data: IData[], startIndex: number, endIndex: number) => {
   const items = data.slice(startIndex, endIndex);
   return items;
 };
 
-const useGrid = (data: any[], currentPage: number, itemsPerPage: number) => {
+const useGrid = (data: IData[], currentPage: number, itemsPerPage: number) => {
   const [gridRange, setGridRange] = useState<number>();
-  const [slice, setSlice] = useState<any>([]);
+  const [slice, setSlice] = useState<IData[]>([]);
 
   const startIndex: number = (currentPage - 1) * itemsPerPage;
   const endIndex: number = startIndex + itemsPerPage;
@@ -20,7 +21,7 @@ const useGrid = (data: any[], currentPage: number, itemsPerPage: number) => {
     const range: number = calculateRange(data, itemsPerPage);
     setGridRange(range);
 
-    const slice: any[] = sliceData(data, startIndex, endIndex);
+    const slice: IData[] = sliceData(data, startIndex, endIndex);
     setSlice(slice);
   }, [
     data,
