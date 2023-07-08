@@ -6,7 +6,7 @@ const GridFooter = ({
 }: {
   currentPage: number;
   totalPages: number;
-  setCurrentPage: any;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const goToPreviousPage = () => {
     if (currentPage > 1) {
