@@ -6,7 +6,7 @@ import { data } from './data';
 export default function App() {
   return (
     <div>
-      <GridPagination data={data} />
+      <GridPagination data={data} itemsPerPage={16} />
     </div>
   );
 }
