@@ -21,7 +21,7 @@ const Grid = ({
         totalPages={range}
       />
       <div className="grid-container">
-        {slice.map((item, index) => (
+        {slice.map((item: IData, index: number) => (
           <div key={index} className="grid-item">
             <div>Name: {item.name}</div>
             <div>Age: {item.age}</div>
