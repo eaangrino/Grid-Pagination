@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IData, IDataUseGrid } from '../interfaces/interfaces';
 import GridFooter from './GridFooter';
-import useGrid from './hook/useGrid';
+import useGrid from './../hook/useGrid';
 
 const Grid = ({
   data,
